@@ -1,0 +1,75 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{geometry, CJKutf8}
+\geometry{margin=1.5cm, vmargin={0pt,1cm}}
+\setlength{\topmargin}{-1cm}
+\setlength{\paperheight}{29.7cm}
+\setlength{\textheight}{25.3cm}
+
+% useful packages.
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{layout}
+\usepackage{listings}
+\usepackage{float, caption}
+
+\lstset{
+    basicstyle=\ttfamily, basewidth=0.5em
+}
+
+% some common command
+\newcommand{\dif}{\mathrm{d}}
+\newcommand{\avg}[1]{\left\langle #1 \right\rangle}
+\newcommand{\difFrac}[2]{\frac{\dif #1}{\dif #2}}
+\newcommand{\pdfFrac}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\OFL}{\mathrm{OFL}}
+\newcommand{\UFL}{\mathrm{UFL}}
+\newcommand{\fl}{\mathrm{fl}}
+\newcommand{\op}{\odot}
+\newcommand{\Eabs}{E_{\mathrm{abs}}}
+\newcommand{\Erel}{E_{\mathrm{rel}}}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead{}
+\lhead{张奕初, 3230103632}
+\chead{数据结构与算法第四次作业}
+\rhead{Oct.20th, 2024}
+
+\section{测试程序的设计思路}
+
+我首先创建了一个链表list1,创建了m和n两个int变量,接下来测试push_back和push_front总共四种情况,同时也调用了begin和end两个函数。再用拷贝构造函数创建list3并打印,然后将一个已经初始化过的列表导入list4中并输出。
+然后在对list1进行测试pop_front和pop_back并输出,包含了有const和无const的两种类型。用赋值运算符创建list2=list1并输出。创建IntList::const_iterator it1 = list3.begin()
+改变it1,测试const_iterator迭代器的递增和递减,包含retrieve,然后IntList::iterator it4 = list3.begin(),测试iterator的递增和递减。创建it2和it3均为list3.end()测试判断迭代器是否相等。
+创建int变量a,把5插入到list2的首位,再把a插入到list2的首位。最后用erase把list2变成空链表。
+
+\section{测试的结果}
+
+测试结果一切正常。
+
+我用 valgrind 进行测试，发现没有发生内存泄露。
+
+\section{（可选）bug报告}
+
+我发现了一个 bug，触发条件如下：
+
+\begin{enumerate}
+    \item 首先……
+    \item 然后……
+    \item 此时发现……
+\end{enumerate}
+
+据我分析，它出现的原因是：
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
